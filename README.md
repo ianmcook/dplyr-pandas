@@ -1,4 +1,4 @@
 # dplyr-pandas
 TriPython talk: dplyr-Style Data Manipulation with pandas
 
-Slides: _add slides link here_
+Slides: https://goo.gl/sVzQ9f
