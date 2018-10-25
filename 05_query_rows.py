@@ -55,5 +55,6 @@ games.loc[games.max_players.between(5,6), :]
 
 games.loc[lambda x: x.min_age < 5, :]
 games.loc[lambda x: x.max_players.between(5,6), :]
+games.loc[lambda x: (x.list_price < 10) & (x.max_players >= 6), :]
 games.loc[lambda x: ~x.name.isin(["Clue", "Risk"]), :]
 games.loc[lambda x: ~x.name.str.startswith("C"), :]
