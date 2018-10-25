@@ -1,0 +1,6 @@
+order_id	cust_id	empl_id	total
+1	c	1	24.78
+2	a	4	28.54
+3	b	3	48.69
+4	b	3	-16.39
+5	z	2	29.92

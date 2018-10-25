@@ -1,0 +1,6 @@
+empl_id	first_name	last_name	salary	office_id
+1	Ambrosio	Rojas	25784	c
+2	Val	Snyder	37506	e
+3	Virginia	Levitt	54523	b
+4	Sabahattin	Tilki	28060	a
+5	Lujza	Csizmadia	39530	b

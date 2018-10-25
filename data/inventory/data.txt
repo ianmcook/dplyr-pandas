@@ -1,0 +1,6 @@
+shop	game	qty	aisle	price
+Dicey	Monopoly	7	3	17.99
+Dicey	Clue	3		9.99
+Board 'Em	Monopoly	11	2	25.00
+Board 'Em	Candy Land	4	2	
+Board 'Em	Risk	3	1	35.00
