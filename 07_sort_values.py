@@ -29,3 +29,11 @@ games \
   .filter(['name', 'list_price']) \
   .sort_values('list_price') \
   .head(2)
+
+# Alternatively, use the `.iloc` indexer to limit or
+# paginate results at the end of the chain of
+# operations. Use slice notation: `start:(end+1)`
+games \
+  .filter(['name', 'list_price']) \
+  .sort_values('list_price') \
+  .iloc[0:2, :]
