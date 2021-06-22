@@ -1,4 +1,4 @@
-# # Combining R data frames (adding rows)
+# # Combining R data frames by row
 
 # Load packages and read games data
 library(readr)
@@ -35,3 +35,23 @@ games %>%
   bind_rows(more_games) %>%
   select(min_players, max_players) %>%
   distinct()
+
+
+# # Combining R data frames by column
+
+# Create a second data frame with more columns
+# describing the games in the `games` data frame
+more_columns <- tribble(
+  ~dice, ~spinner,
+  2, FALSE,
+  0, FALSE,
+  2, FALSE,
+  0, TRUE,
+  5, FALSE
+)
+more_columns
+
+# Use the dplyr function `bind_cols()` to combine two
+# data frames horizontally, adding the columns of the
+# second to the right of the first
+games %>% bind_cols(more_columns)

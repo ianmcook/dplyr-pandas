@@ -17,3 +17,17 @@ games %>% select(name, min_players, max_players)
 # Write the expression on multiple lines
 games %>% 
   select(name, min_players, max_players)
+
+
+# `select()` always returns a data frame, even if
+# it only contains one column
+games %>% select(name)
+
+# To return a single column as a vector, use the
+# dplyr function `pull()`
+games %>% pull(name)
+
+# Alternatively, you can return a vector by using 
+# double square brackets or the dollar-sign operator
+games[["name"]]
+games$name

@@ -20,7 +20,7 @@ games.assign(tax_percent = 0.08875)
 # or use a lambda:
 games \
   .assign(
-    price_with_tax = round(
+    price_with_tax = np.round(
       games.list_price * 1.08875, 2
     )
   )
@@ -28,7 +28,7 @@ games \
 games \
   .assign(
     price_with_tax = lambda x:
-      round(x.list_price * 1.08875, 2)
+      np.round(x.list_price * 1.08875, 2)
   )
 
 # The latter option is better for chaining
@@ -48,7 +48,7 @@ games \
   .assign(
     tax_percent = 0.08875,
     price_with_tax = lambda x:
-      round(x.list_price * 1.08875, 2)
+      np.round(x.list_price * 1.08875, 2)
   )
 
 # But you can't reference columns that you created in an
@@ -60,7 +60,7 @@ games \
   ) \
   .assign(
     price_with_tax = lambda x:
-      round(x.list_price * (1 + x.tax_percent), 2)
+      np.round(x.list_price * (1 + x.tax_percent), 2)
   )
 
 # Alternatively, use the DataFrame method `eval`, which
@@ -91,6 +91,21 @@ games. \
   assign(
     name = lambda x: x.name.str.upper(),
     inventor = lambda x: x.inventor.str.lower()
+  )
+
+
+# ## Changing column data types
+
+# To return a DataFrame with one or more columns
+# converted to different data types, use an the
+# `pandas.Series` method `astype`, specifying a data
+# type such as `'str'`, `'float'`, or `'int'`. Use
+# the data type `'category'` to convert a column to
+# the pandas categorical data type.
+games. \
+  assign(
+    name = lambda x: x.name.astype('category'),
+    year = lambda x: x.year.astype('str')
   )
 
 

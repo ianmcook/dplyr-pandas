@@ -1,4 +1,4 @@
-# # Combining pandas DataFrames (adding rows)
+# # Combining pandas DataFrames by row
 
 # Import modules and read games data
 import numpy as np
@@ -34,3 +34,23 @@ games \
   .append(more_games) \
   .filter(['min_players', 'max_players']) \
   .drop_duplicates()
+
+
+# # Combining pandas DataFrames by column
+
+# Create a second DataFrame with more columns
+# describing the games in the `games` DataFrame
+more_columns = pd.DataFrame(
+  [[2, False],
+   [0, False],
+   [2, False],
+   [0, True],
+   [5, False]],
+  columns=['dice', 'spinner']
+)
+more_columns
+
+# Use the pandas function `concat` with `axis=1` to
+# combine two or more DataFrames horizontally, adding
+# the columns of the second to the right of the first 
+pd.concat([games, more_columns], axis=1)

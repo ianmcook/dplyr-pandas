@@ -1,6 +1,6 @@
 Complete the following exercises by chaining together
 pandas DataFrame methods or dplyr verbs. Use the flights
-data, in the file 'data/flights/flights.csv'.
+data, in the file `data/flights/flights.csv`.
 
 1. Find the five worst delayed destinations (largest 
    average arrival delay) for flights departing EWR. 
@@ -8,7 +8,7 @@ data, in the file 'data/flights/flights.csv'.
    arrival delay.
 
 2. Calculate the average air speed of each flight in 
-   units of miles per hour (distance / air_time * 60) 
+   units of miles per hour (`distance / air_time * 60`) 
    rounded to the nearest integer. Return a result set
    that includes the carrier, flight, origin, and dest
    columns, as well as the new column giving the air 

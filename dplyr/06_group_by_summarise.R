@@ -38,7 +38,8 @@ games %>%
 # Load the flights dataset to demonstrate on larger data
 flights <- read_csv("data/flights/flights.csv")
 
-# You can specify muliple grouping columns
+# You can specify multiple grouping columns and 
+# return multiple aggregates
 
 # Aggregate functions in R do not ignore missing values;
 # they return `NA` if any of the aggregated values are `NA`.
@@ -81,4 +82,4 @@ inventory %>%
 # included in the results
 inventory %>%
   group_by(aisle) %>%
-  summarise(n())
+  summarise(num_rows = n())

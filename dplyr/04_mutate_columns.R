@@ -44,6 +44,19 @@ games %>% mutate(
 )
 
 
+# ## Changing column data types
+
+# To return a data frame with one or more columns
+# converted to different data types, use an `as.`
+# function in `mutate()`. For example: `as.character()`,
+# `as.numeric()`, or `as.integer()`. Use `as.factor()`
+# to encode a column as a factor (a categorical column).
+games %>% mutate(
+  name = as.factor(name),
+  year = as.character(year)
+)
+
+
 # ## Renaming columns
 
 # To return a data frame with one or more columns renamed,
@@ -73,7 +86,7 @@ inventory
 
 # Use the `ifelse()` and `is.na()` functions
 inventory %>%
-  mutate(price = ifelse(is.na(price), 9.00, price))
+  mutate(price = ifelse(is.na(price), 0, price))
 
 
 # ## Iterating over rows
