@@ -53,5 +53,12 @@ class(games)
 # View the data as a tibble
 games
 
+# Tibbles only print as many rows and columns as fit on
+# one screen. To manually control the print behavior, 
+# call `print()` and specify `n` (number of rows) and/or 
+# `width` (max width of the output). For example, to
+# print all rows and all columns:
+games %>% print(n = Inf, width = Inf)
+
 # View the data as a data frame
 as.data.frame(games)

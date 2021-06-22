@@ -20,7 +20,7 @@ games %>%
     price_with_tax = 
       round(list_price * 1.08875, 2)
   ) %>% 
-  as.data.frame()
+  print(width = Inf)
 
 # You can create multiple columns with one call to the
 # `mutate()` function, and you can reference columns that you
@@ -31,7 +31,7 @@ games %>%
     price_with_tax = 
       round(list_price * (1 + tax_percent), 2)
   ) %>% 
-  as.data.frame()
+  print(width = Inf)
 
 
 # ## Replacing columns
