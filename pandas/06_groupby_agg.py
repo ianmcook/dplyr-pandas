@@ -74,10 +74,16 @@ inventory \
   .agg(avg_price=('price','mean'))
 
 # With pandas, missing values in grouping columns
-# are not included in the results
+# are _not_ included in the results by default
 inventory \
   .groupby('aisle') \
   .agg(num_rows=('aisle','size')) 
+
+# To include missing values in grouping columns,
+# set `dropna=False` in `groupby()`:
+inventory \
+  .groupby('aisle', dropna=False) \
+  .agg(num_rows=('aisle','size'))
 
 
 # ## Removing the MultiIndex
